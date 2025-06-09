@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="h-full">
 
 <head>
     <meta charset="utf-8" />
@@ -7,8 +7,17 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
     <header>
+        <div class="flex bg-emerald-700 justify-end pr-15">
+            <a class="mr-2">Dark</a>
+            <a class="mr-2">|</a>
+            <a class="mr-2">A+</a>
+            <a class="mr-2">|</a>
+            <a class="mr-2">A</a>
+            <a class="mr-2">|</a>
+            <a class="mr-2">A-</a>
+        </div>
         <div class="flex justify-around p-3.5 bg-emerald-700">
             <img src="{{ asset('images/emblem.svg.webp') }}" alt="Emblem of India" class="emblem">
             <div class="flex flex-col ">
@@ -18,20 +27,19 @@
             <img src="{{ asset('images/stateLogo.svg.png') }}" alt="Emblem of Arunachal Pradesh" class="stateLogo">
         </div>
         <nav class="flex bg-blue-500 p-2.5 justify-center space-x-16">
-            <ul class="flex space-x-16">
+            <ul class="flex space-x-16 group relative">
                 <li>
                     <a href="#">Home</a>
                 </li>
                 <li>
                     <a href="#">About Us<i class=""></i></a>
 
-                    {{-- <div class="">
-                        <ul>
-                            <li><a>Profile</a></li>
-                            <li><a>WhoIsWho</a></li>
-                            <li><a>Organizational Structure</a></li>
-                        </ul>
-                    </div> --}}
+                    <ul class="absolute left-0 hidden group-hover:block bg-white text-black mt-2 w-48 rounded shadow-lg z-10">
+                        <li><a>Profile</a></li>
+                        <li><a>WhoIsWho</a></li>
+                        <li><a>Organizational Structure</a></li>
+                    </ul>
+
                 </li>
                 <li>
                     <a href="#">Act & Rules</a>
@@ -101,15 +109,27 @@
             <a href="#"><button>Login</button></a>
         </nav>
     </header>
-    <footer class="flex">
-        <img src="{{ asset('images/NIC_logo.svg.png') }}" alt="NIC Logo" class="nicLogo">
+
+    <main class="flex-grow">
+        <p></p>
+    </main>
+
+    <footer class="flex bg-blue-700 p-2 text-white justify-center">
+        <div class="bg-white mr-3">
+            <img src="{{ asset('images/NIC_logo.svg.png') }}" alt="NIC Logo" class="nicLogo p-0.5">
+        </div>
         <div>
             <div>
-                <a href="#">Home | </a>
-                <a href="#">Disclaimer</a>
+                <a href="#"
+                    class="mr-2 hover:text-amber-300 transition-all duration-300 ease-in-out text-lg;">Home</a>
+                <a href="#" class="mr-2">|</a>
+                <a href="#"
+                    class="mr-2 hover:text-amber-300 transition-all duration-300 ease-in-out text-lg;">Disclaimer</a>
             </div>
-            <a>Copyright &copy Department of Administrative Reforms, Government of Arunachal Pradesh. Site Designed by National Informatics Centre, Arunachal Pradesh State Centre</a>
+            <a>Copyright &copy Department of Administrative Reforms, Government of Arunachal Pradesh. Site Designed by
+                National Informatics Centre, Arunachal Pradesh State Centre</a>
         </div>
     </footer>
 </body>
+
 </html>
